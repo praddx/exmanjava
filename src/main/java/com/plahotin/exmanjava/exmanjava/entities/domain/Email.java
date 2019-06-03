@@ -1,5 +1,7 @@
 package com.plahotin.exmanjava.exmanjava.entities.domain;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.Value;
 
 import javax.persistence.Embeddable;
@@ -7,11 +9,12 @@ import java.util.regex.Pattern;
 
 import static org.apache.logging.log4j.util.Strings.isBlank;
 
-@Value
+@Data
+@NoArgsConstructor
 @Embeddable
 public class Email {
 
-    private static final Pattern EMAIL_PATTERN = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
+    private static final Pattern EMAIL_PATTERN = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
 
     private String emailAddress;
 
